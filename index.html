@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Театр - Бронирование билетов</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Театр</h1>
+            <nav>
+                <button class="btn btn-secondary" onclick="showSection('main-page')">Главная</button>
+                <button class="btn btn-secondary" onclick="showSection('booking-page')">Бронирование</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Main Page -->
+        <section id="main-page">
+            <div class="hero">
+                <h2>Забронируйте билеты в театр</h2>
+                <p>Откройте для себя и забронируйте любимые спектакли в несколько кликов</p>
+            </div>
+
+            <div class="shows-section">
+                <h3>Список спектаклей</h3>
+                <hr>
+                <h3>Ближайшие спектакли</h3>
+                
+                <div class="shows-grid">
+                    <div class="show-card" onclick="selectShow(this, 'Гамлет')">
+                        <h4>Гамлет</h4>
+                        <div class="date">15 декабря 2025</div>
+                        <p class="description">Классическая трагедия Шекспира в современной интерпретации</p>
+                    </div>
+                    <div class="show-card" onclick="selectShow(this, 'Щелкунчик')">
+                        <h4>Щелкунчик</h4>
+                        <div class="date">20 декабря 2025</div>
+                        <p class="description">Волшебный рождественский балет для всей семьи</p>
+                    </div>
+                    <div class="show-card" onclick="selectShow(this, 'Ромео и Джульетта')">
+                        <h4>Ромео и Джульетта</h4>
+                        <div class="date">29 декабря 2025</div>
+                        <p class="description">Вечная история любви ко Дню святого Валентина</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Page -->
+        <section id="booking-page" style="display: none;">
+            <div class="booking-section">
+                <div class="breadcrumb">Главная / Бронирование</div>
+                
+                <h2>Бронирование билетов</h2>
+                
+                <div class="booking-form">
+                    <div class="form-group">
+                        <label for="show-select">Выберите спектакль</label>
+                        <select id="show-select">
+                            <option value="">-- Выберите спектакль --</option>
+                            <option value="Щелкунчик">Щелкунчик</option>
+                            <option value="Гамлет">Гамлет</option>
+                            <option value="Ромео и Джульетта">Ромео и Джульетта</option>
+                            <option value="Макбет">Макбет</option>
+                        </select>
+
+                        <label for="ticket-count" style="margin-top: 1rem;">Количество билетов</label>
+                        <select id="ticket-count">
+                            <option value="1">1 билет</option>
+                            <option value="2">2 билета</option>
+                            <option value="3">3 билета</option>
+                            <option value="4">4 билета</option>
+                            <option value="5">5 билетов</option>
+                        </select>
+
+                        <label for="customer-name" style="margin-top: 1rem;">Ваше имя</label>
+                        <input type="text" id="customer-name" placeholder="Введите ваше имя">
+
+                        <label for="customer-email" style="margin-top: 1rem;">Email</label>
+                        <input type="email" id="customer-email" placeholder="Введите ваш email">
+
+                        <label for="customer-phone" style="margin-top: 1rem;">Телефон</label>
+                        <input type="tel" id="customer-phone" placeholder="Введите ваш телефон">
+                    </div>
+                    
+                    <div class="form-group">
+                        <h3>Даты</h3>
+                        <div class="calendar">
+                        <button class="calendar-nav" onclick="prevMonth()">&lt;</button>
+                            <strong>Декабрь 2025</strong>
+                            <button class="calendar-nav" onclick="nextMonth()">&gt;</button>
+                            </div>
+                            
+                            <div class="calendar-grid">
+                                <div class="calendar-day header">Вс</div>
+                                <div class="calendar-day header">Пн</div>
+                                <div class="calendar-day header">Вт</div>
+                                <div class="calendar-day header">Ср</div>
+                                <div class="calendar-day header">Чт</div>
+                                <div class="calendar-day header">Пт</div>
+                                <div class="calendar-day header">Сб</div>
+                                
+                                <div class="calendar-day">1</div>
+                                <div class="calendar-day">2</div>
+                                <div class="calendar-day">3</div>
+                                <div class="calendar-day">4</div>
+                                <div class="calendar-day">5</div>
+                                <div class="calendar-day">6</div>
+                                <div class="calendar-day">7</div>
+                                <div class="calendar-day">8</div>
+                                <div class="calendar-day">9</div>
+                                <div class="calendar-day">10</div>
+                                <div class="calendar-day">11</div>
+                                <div class="calendar-day">12</div>
+                                <div class="calendar-day">13</div>
+                                <div class="calendar-day">14</div>
+                                <div class="calendar-day">15</div>
+                                <div class="calendar-day">16</div>
+                                <div class="calendar-day">17</div>
+                                <div class="calendar-day">18</div>
+                                <div class="calendar-day">19</div>
+                                <div class="calendar-day selected">20</div>
+                                <div class="calendar-day">21</div>
+                                <div class="calendar-day">22</div>
+                                <div class="calendar-day">23</div>
+                                <div class="calendar-day">24</div>
+                                <div class="calendar-day">25</div>
+                                <div class="calendar-day">26</div>
+                                <div class="calendar-day">27</div>
+                                <div class="calendar-day">28</div>
+                                <div class="calendar-day">29</div>
+                                <div class="calendar-day">30</div>
+                                <div class="calendar-day">31</div>
+                            </div>
+                        </div>
+                        
+                        <div class="time-selection">
+                            <h3>Выберите время</h3>
+                            <div class="time-option selected">18:00</div>
+                            <div class="time-option">20:00</div>
+                            <div class="time-option">14:00</div>
+                        </div>
+                        
+                        <button class="continue-btn" onclick="bookTicket()">Забронировать билеты</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Confirmation Section -->
+        <section id="confirmation-page" style="display: none;">
+            <div class="confirmation-section">
+                <div class="confirmation-icon">✓</div>
+                <h2>Бронирование подтверждено!</h2>
+                <p>Ваши билеты успешно забронированы. Детали бронирования отправлены на вашу почту.</p>
+                
+                <div class="booking-details">
+                    <h4>Детали бронирования:</h4>
+                    <p><strong>Спектакль:</strong> <span id="confirm-show">-</span></p>
+                    <p><strong>Дата:</strong> <span id="confirm-date">-</span></p>
+                    <p><strong>Время:</strong> <span id="confirm-time">-</span></p>
+                    <p><strong>Количество билетов:</strong> <span id="confirm-tickets">-</span></p>
+                    <p><strong>Имя:</strong> <span id="confirm-name">-</span></p>
+                    <p><strong>Email:</strong> <span id="confirm-email">-</span></p>
+                    <p><strong>Телефон:</strong> <span id="confirm-phone">-</span></p>
+                    <p><strong>Номер бронирования:</strong> <span id="booking-number">-</span></p>
+                </div>
+                
+                <div class="nav-buttons">
+                    <button class="btn btn-primary" onclick="showSection('main-page')">Вернуться на главную</button>
+                    <button class="btn btn-secondary" onclick="printTicket()">Распечатать билет</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- Модальное окно подтверждения -->
+<div id="successModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div class="modal-icon">🎭</div>
+        <h2>Бронирование подтверждено!</h2>
+        <p>Ваши билеты успешно забронированы. Детали бронирования отправлены на вашу почту.</p>
+        <div class="modal-details">
+            <p><strong>Спектакль:</strong> <span id="modal-show">-</span></p>
+            <p><strong>Дата:</strong> <span id="modal-date">-</span></p>
+            <p><strong>Время:</strong> <span id="modal-time">-</span></p>
+            <p><strong>Билетов:</strong> <span id="modal-tickets">-</span></p>
+        </div>
+        <button class="btn btn-primary" onclick="closeModal()">Отлично!</button>
+    </div>
+</div>
+    <script src="js/script.js"></script>
+</body>
+</html>
